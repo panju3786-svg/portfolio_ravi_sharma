@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF6ED;
+  --foreground: #342720;
+  --ivory: #FAF6ED;
+  --sandalwood: #EFE3CF;
+  --maroon: #702C35;
+  --maroon-dark: #521F26;
+  --maroon-light: #8E3844;
+  --gold: #B89145;
+  --gold-light: #D4AF37;
+  --gold-dark: #8F6D28;
+  --text-dark: #342720;
+  --text-muted: #786B5C;
+  --card-bg: #FFFFFF;
+}
+
+@theme {
+  --color-ivory: var(--ivory);
+  --color-sandalwood: var(--sandalwood);
+  --color-maroon: var(--maroon);
+  --color-maroon-dark: var(--maroon-dark);
+  --color-maroon-light: var(--maroon-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-text-dark: var(--text-dark);
+  --color-text-muted: var(--text-muted);
+  --color-card-bg: var(--card-bg);
+
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-tamil: var(--font-noto-tamil), "Noto Sans Tamil", system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--ivory);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(184, 145, 69, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(112, 44, 53, 0.04) 0%, transparent 40%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Tamil typography enhancement */
+:lang(ta) {
+  font-family: var(--font-tamil);
+  line-height: 1.75;
+}
+
+/* Custom scrollbar in temple maroon & gold */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #B89145;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #702C35;
+}
+
+/* Subtle sacred aura animations */
+@keyframes sacredPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(184, 145, 69, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(184, 145, 69, 0);
+  }
+}
+
+.sacred-glow {
+  animation: sacredPulse 3s infinite ease-in-out;
+}
+
+/* Kolam border styling */
+.border-temple-gold {
+  border-color: #B89145;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #702C35 0%, #B89145 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
